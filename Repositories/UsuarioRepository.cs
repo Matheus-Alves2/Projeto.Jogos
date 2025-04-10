@@ -8,28 +8,64 @@ namespace Projeto_Jogos.Repositories
     {
         private readonly ProjetoJogoContext _context;
 
-        public JogoRepository(ProjetoJogoContext context)
+        public UsuarioRepository(ProjetoJogoContext context)
         {
             _context = context;
         }
         public void AtualizarUsuario(Usuarios usuario)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Usuarios usuarioExistente = _context.Usuario.Find(usuario)!;
+                if (usuarioExistente != null)
+                {
+                    usuarioExistente = _context.Usuario.Find(usuario)!;
+                }
+                _context.SaveChanges();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public void CastarUsuario(Usuarios usuario)
         {
-           
+            try
+            {
+                _context.Usuario.Add(usuario);
+                _context.SaveChanges();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public void DeletarUsuario(int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Usuarios usaurioExistente = _context.Usuario.Find(id)!;
+                if (usaurioExistente != null)
+                {
+                    _context.Usuario.Remove(usaurioExistente);
+                }
+                _context.SaveChanges();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public List<Usuarios> ListarUsuarios()
         {
-            throw new NotImplementedException();
+           List<Usuarios> usuarios = _context.Usuario.ToList();
+            return usuarios;
         }
     }
 }

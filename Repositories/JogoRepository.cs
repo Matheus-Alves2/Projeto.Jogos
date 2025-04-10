@@ -22,9 +22,24 @@ namespace Projeto_Jogos.Repositories
         //2. Atualizar
         //3. Deletar
         //4. Listar
-        public void AtualizarJogo(Guid idDojogo)
+       
+
+        public void AtualizarJogo(Guid idDojogo, Jogo jogoAtualizado)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Jogo jogoExistente = _context.Jogo.Find(idDojogo)!;
+                if (jogoExistente != null)
+                {
+                    jogoExistente.NomeDoJogo = jogoExistente.NomeDoJogo;
+                }
+                    _context.SaveChanges();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public void CadastrarJogo(Jogo jogoNovo)
@@ -36,16 +51,6 @@ namespace Projeto_Jogos.Repositories
 
                 _context.Jogo.Add(jogoNovo);
                 _context.SaveChanges();
-
-                if (jogoNovo != null)
-                {
-                    _context.Jogo.Add(jogoNovo);
-                    _context.SaveChanges();
-                }
-                else
-                {
-                    throw new Exception("O Jogo não pode ser nulo");
-                }
             }
             catch (Exception)
             {
@@ -56,21 +61,29 @@ namespace Projeto_Jogos.Repositories
 
         public void DeletarJogo(Guid idDojogo)
         {
-            throw new NotImplementedException();
-        }
-
-        public List<Jogo> ListarJogos()
-        {
             try
             {
-                return _context.Jogo.ToList();
+                Jogo jogoExistente = _context.Jogo.Find(idDojogo)!;
+                //Verifica se o jogo existe
+                //Se o jogo existir, remove
 
+                if (jogoExistente != null)
+                {
+                    _context.Jogo.Remove(jogoExistente);
+                }
+                _context.SaveChanges();
             }
             catch (Exception)
             {
 
                 throw;
             }
+        }
+
+        public List<Jogo> ListarJogos()
+        {
+          List<Jogo> jogos = _context.Jogo.ToList();
+            return jogos;
         }
     }
 }

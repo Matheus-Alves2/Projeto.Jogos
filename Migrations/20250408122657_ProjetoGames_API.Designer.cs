@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Projeto_Jogos.Context;
 
@@ -10,10 +11,12 @@ using Projeto_Jogos.Context;
 
 namespace Projeto_Jogos.Migrations
 {
-    [DbContext(typeof(ProjetoJogosContext))]
-    partial class ProjetoJogosContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(ProjetoJogoContext))]
+    [Migration("20250408122657_ProjetoGames_API")]
+    partial class ProjetoGames_API
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -43,7 +46,7 @@ namespace Projeto_Jogos.Migrations
 
                     b.HasIndex("JogoFavorito");
 
-                    b.HasIndex("Nome")
+                    b.HasIndex("Nickname")
                         .IsUnique();
 
                     b.ToTable("Usuarios");

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Projeto_Jogos.Migrations
 {
     /// <inheritdoc />
-    public partial class Dbjogos : Migration
+    public partial class ProjetoGames_API : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -56,9 +56,9 @@ namespace Projeto_Jogos.Migrations
                 column: "JogoFavorito");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Usuarios_Nome",
+                name: "IX_Usuarios_Nickname",
                 table: "Usuarios",
-                column: "Nome",
+                column: "Nickname",
                 unique: true);
         }
 

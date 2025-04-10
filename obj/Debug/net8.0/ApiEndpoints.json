@@ -1,0 +1,128 @@
+[
+  {
+    "ContainingType": "Projeto_Jogos.Controllers.JogoController",
+    "Method": "Get",
+    "RelativePath": "api/Jogo",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Projeto_Jogos.Controllers.JogoController",
+    "Method": "Post",
+    "RelativePath": "api/Jogo",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "jogoNovo",
+        "Type": "Projeto_Jogos.Domains.Jogo",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Projeto_Jogos.Controllers.JogoController",
+    "Method": "Put",
+    "RelativePath": "api/Jogo/{idDojogo}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idDojogo",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "jogoAtualizado",
+        "Type": "Projeto_Jogos.Domains.Jogo",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Projeto_Jogos.Controllers.JogoController",
+    "Method": "Delete",
+    "RelativePath": "api/Jogo/{idDojogo}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idDojogo",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Projeto_Jogos.Controllers.UsuarioController",
+    "Method": "Get",
+    "RelativePath": "api/Usuario",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Projeto_Jogos.Controllers.UsuarioController",
+    "Method": "Post",
+    "RelativePath": "api/Usuario",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "usuarioNovo",
+        "Type": "ProjetoDeJogos.Domains.Usuarios",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Projeto_Jogos.Controllers.UsuarioController",
+    "Method": "Put",
+    "RelativePath": "api/Usuario/{idDoUsuario}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idDoUsuario",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "usuarioAtualizado",
+        "Type": "ProjetoDeJogos.Domains.Usuarios",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Projeto_Jogos.Controllers.UsuarioController",
+    "Method": "Delete",
+    "RelativePath": "api/Usuario/{idDoUsuario}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idDoUsuario",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
